@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>  
+<script type="text/javascript">
+
+window.onload = function () {
+	var chart1 = new CanvasJS.Chart("childrens",
+	{
+		title:{
+			text: "Опрос : Каникулы. " +
+                    "Ученики"
+		},
+                animationEnabled: true,
+
+		theme: "theme2",
+		data: [
+		{        
+			type: "pie",       
+			indexLabelFontFamily: "Garamond",       
+			indexLabelFontSize: 20,
+			indexLabel: "{label} {y}%",
+			startAngle:-20,      
+			showInLegend: false,
+			toolTipContent:"{legendText} {y}%",
+			dataPoints: [
+				{  y: 83, legendText:"Триместры", label: "Триместры" },
+				{  y: 17, legendText:"Четверти", label: "Четверти" },
+
+			]
+		}
+		]
+	});
+	chart1.render();
+
+    var chart2 = new CanvasJS.Chart("parants",
+	{
+		title:{
+			text: "Опрос : Каникулы." +
+                    "Родители"
+		},
+                animationEnabled: true,
+
+		theme: "theme2",
+		data: [
+		{
+			type: "pie",
+			indexLabelFontFamily: "Garamond",
+			indexLabelFontSize: 20,
+			indexLabel: "{label} {y}%",
+			startAngle:-20,
+			showInLegend: false,
+			toolTipContent:"{legendText} {y}%",
+			dataPoints: [
+				{  y: 50, legendText:"Триместры", label: "Триместры" },
+				{  y: 50, legendText:"Четверти", label: "Четверти" },
+
+			]
+		}
+		]
+	});
+	chart2.render();
+
+    var chart3 = new CanvasJS.Chart("all",
+	{
+		title:{
+			text: "Опрос : Каникулы." +
+                    "Общее"
+		},
+                animationEnabled: true,
+
+		theme: "theme2",
+		data: [
+		{
+			type: "pie",
+			indexLabelFontFamily: "Garamond",
+			indexLabelFontSize: 20,
+			indexLabel: "{label} {y}%",
+			startAngle:-20,
+			showInLegend: false,
+			toolTipContent:"{legendText} {y}%",
+			dataPoints: [
+				{  y: 40, legendText:"Триместры", label: "Триместры" },
+				{  y: 60, legendText:"Четверти", label: "Четверти" },
+
+			]
+		}
+		]
+	});
+	chart3.render();
+}
+
+
+</script>
+
+<link href="{{STATIC_URL}}/main.css" rel="stylesheet">
+        <link href="{{STATIC_URL}}bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="{{STATIC_URL}}bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+
+<script type="text/javascript" src="{{ STATIC_URL }}/js/canvasjs.min.js"></script>
+</head>
+<body>
+
+
+<div id="main" style="padding: 100px">
+    <h1> Опрос про каникулы</h1>
+    <div id="childrens" style="height: 300px; width: 50%;margin: 0 auto"></div>
+    <div id="parants" style="height: 300px; width: 50%;margin: 0 auto"></div>
+    <div id="all" style="height: 300px; width: 50%;  margin: 0 auto"></div>
+</div>
+
+</body>
+
+
+</html>
